@@ -1,0 +1,61 @@
+CREATE TABLE public.accidental_deaths
+(
+    incident_id integer NOT NULL,
+    incident_date date NOT NULL,
+    state character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    city_or_county character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    num_killed integer NOT NULL,
+    num_injured integer NOT NULL,
+    CONSTRAINT accidental_deaths_pkey PRIMARY KEY (incident_id)
+);
+
+
+CREATE TABLE public.mass_shooting
+(
+    incident_id integer NOT NULL,
+    incident_date date NOT NULL,
+    state character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    city_or_county character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    num_killed integer NOT NULL,
+    num_injured integer NOT NULL,
+    CONSTRAINT mass_shooting_pkey PRIMARY KEY (incident_id)
+);
+
+
+CREATE TABLE public.accidental_injuries
+(
+    incident_id integer NOT NULL,
+    incident_date date NOT NULL,
+    state character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    city_or_county character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    num_killed integer NOT NULL,
+    num_injured integer NOT NULL,
+    CONSTRAINT accidental_injuries_pkey PRIMARY KEY (incident_id)
+);
+
+
+CREATE TABLE public.mass_shooting_merge
+(
+    state character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    num_killed integer NOT NULL,
+    num_injured integer NOT NULL,
+    CONSTRAINT mass_shooting_merge_pkey PRIMARY KEY (state)
+);
+
+
+CREATE TABLE public.accidental_death_merge
+(
+    state character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    num_killed integer NOT NULL,
+    num_injured integer NOT NULL
+);
+
+
+CREATE TABLE public.accidental_injury_merge
+(
+    state character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    num_killed integer NOT NULL,
+    num_injured integer NOT NULL
+);
+
+
